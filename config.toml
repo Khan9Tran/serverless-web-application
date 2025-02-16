@@ -51,7 +51,7 @@ identifier = "AWS Study Group FB"
 url = "https://www.facebook.com/groups/awsstudygroupfcj"
 weight = 20
 
-baseURL = "https://khan9tran.github.io/servless-web-application-public/"
+baseURL = "https://khan9tran.github.io/"
 relativeURLs = true
 uglyURLs = true
 
