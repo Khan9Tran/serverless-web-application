@@ -11,7 +11,7 @@ home = [ "HTML", "RSS", "JSON"]
   # Git hub repo link
   editURL = ""
   description = ""
-  author = "journeyoftheaverageguy@gmail.com"
+  author = "trankhangtctv@gmail.com"
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
@@ -50,4 +50,6 @@ name = "<i class='fab fa-facebook'></i> AWS Study Group - Nhóm FB"
 identifier = "AWS Study Group FB"
 url = "https://www.facebook.com/groups/awsstudygroupfcj"
 weight = 20
+
+baseURL = "https://khan9tran.github.io/servless-web-application-public/"
 
