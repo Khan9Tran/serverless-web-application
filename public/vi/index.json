@@ -1,0 +1,78 @@
+[
+{
+	"uri": "/vi/1-introduce/",
+	"title": "Giới thiệu",
+	"tags": [],
+	"description": "",
+	"content": "Xây dựng ứng dụng serverless trên AWS Dự án này hướng dẫn bạn cách xây dựng một ứng dụng web serverless sử dụng các dịch vụ của AWS, giúp bạn triển khai một hệ thống hiệu quả, linh hoạt và tiết kiệm chi phí.\nCác bước thực hiện Tạo bảng DynamoDB để lưu trữ dữ liệu của ứng dụng. Xây dựng hàm Lambda để xử lý các thao tác CRUD trên bảng DynamoDB. Sử dụng S3 để lưu trữ và host các tệp tĩnh của ứng dụng web như HTML, CSS và JavaScript. Tạo CloudFront distribution để phục vụ các tệp tĩnh từ S3 với độ trễ thấp, đảm bảo tốc độ tải trang nhanh chóng. Kết quả mong đợi Sau khi hoàn thành dự án, bạn sẽ có một ứng dụng web serverless hoạt động trên AWS. Bạn sẽ có kinh nghiệm thực hành trong việc xây dựng ứng dụng serverless bằng AWS Lambda, DynamoDB, S3 và CloudFront. Bạn cũng sẽ hiểu rõ cách tích hợp các dịch vụ AWS để xây dựng một giải pháp hoàn chỉnh, từ backend đến frontend. Dự án này sẽ giúp bạn nâng cao kỹ năng về điện toán đám mây, kiến trúc serverless và quản lý dịch vụ AWS, tạo nền tảng vững chắc cho các ứng dụng hiện đại.\n"
+},
+{
+	"uri": "/vi/2-set-up-aws-s3-bucket/",
+	"title": "Thiết lập AWS S3 Bucket",
+	"tags": [],
+	"description": "",
+	"content": "Ở lab này, chúng ta sẽ tạo S3 bucket để chứa toàn bộ dữ liệu của website\nGo to AWS Management Console Find S3 Select S3 Trong giao diện S3 Chọn Select Buckets CHọn Create Bucket Trong giao diện Create Bucket Bucket name, nhập serverless-web-application-on-aws-fcj Cuộn xuống cuối trang Chọn Create Bucket Upload các file cần thiết Các bạn có thể tải xuống các file server tại đây Download File\nTrong giao diện Bucket, ấn chọn Bucket serverless-web-application-on-aws-fcj Tiếp tục, ấn chọn Upload Chọn Add files Chọn lần lượt các file: index.html, script.js, style.css Sau đó, ấn Upload Chờ đến khi các file được tải lên thành công "
+},
+{
+	"uri": "/vi/",
+	"title": "Ứng dụng web không máy chủ",
+	"tags": [],
+	"description": "",
+	"content": "XÂY DỰNG ỨNG DỤNG WEB KHÔNG MÁY CHỦ TRÊN AWS SỬ DỤNG AWS LAMBDA, DYNAMODB, VÀ S3 Tổng quan Trong bài lab này, bạn sẽ xây dựng một ứng dụng web không máy chủ sử dụng AWS Lambda, DynamoDB, và S3. Ứng dụng sẽ cho phép người dùng tạo, đọc, cập nhật, và xóa (CRUD) các mục từ bảng DynamoDB.\nNội dung Giới thiệu Thiết lập AWS S3 Bucket Thiết lập AWS CloudFront Thiết lập AWS Route53 Thiết lập AWS DynamoDB Thiết lập AWS Lambda Kiểm tra Dọn dẹp tài nguyên "
+},
+{
+	"uri": "/vi/3-set-up-aws-cloudfront/",
+	"title": "Thiết lập AWS CloudFront",
+	"tags": [],
+	"description": "",
+	"content": "Amazon CloudFront là một dịch vụ mạng phân phối nội dung (CDN) giúp chúng ta phân phối nội dung tĩnh và động một cách dễ dàng, đáng tin cậy với hiệu năng tốc độ cao, khả năng bảo mật và dễ sử dụng với nhà phát triển. Ở phần này, chúng ta sẽ dùng CloudFront để phân phối nội dung từ kho lưu trữ S3\nGo to AWS Management Console Tìm và chọn CloudFront hoặc có thể chọn trên màng hình chính Trong giao diện CloudFront chọn Create distribution Trong giao diện Create CloudFront Chọn Origin Domain là S3 vừa tạo Phần Name sẽ được sinh ra tự động Trong phần Origin access chọn Origin access control setting Tiếp tục, chọn Create new OAC Trong giao diện tạo OAC Phần name nhập serverless-web-application-on-aws-fcj.s3.us-east.amazonaws.com-1 Chọn Create Trong phần Web Application Firewall, chọn Do not enable security protections Giữ nguyên các phần còn lại và cuộn đến cuối trang, chọn Create distribution Sau khi tạo xong, chọn Copy policy Quay lại phần S3 Bucket đã tạo Vào tab Permissions Trong phần Bucket Policy, chọn Edit Trong giao diện Edit bucket policy, dán phần policy đang được copy Ấn Save change Chuyển sang CloudFront, vào phần Setting chọn Edit Cuộn xuống phần Default root object, nhập index.html. Sau đó ấn Save changes "
+},
+{
+	"uri": "/vi/4-set-up-aws-route53/",
+	"title": "Thiết lập AWS Route53",
+	"tags": [],
+	"description": "",
+	"content": "Route 53 giúp chúng ta cấu hình tên miền để trỏ đến website đã triển khai trên AWS, giúp truy cập thuận tiện hơn.\nTrong phần này, chúng ta cần phải chuẩn bị tên miền. Tên miền muốn sử dụng được Hosted Zone trên Route 53 thì chỉ cần đăng ký hợp lệ và có quyền quản lý DNS. Mình sử dụng tên miền mượn từ một người bạn nguyenthanhhuy.id.vn, các bạn cũng có thể đăng ký tên miền đuôi .id.vn miễn phí từ các nhà cung cấp dịch vụ tên miền như matbao, tenten, \u0026hellip;\nGo to AWS Management Console Find Route 53 Select Route 53 Trong giao diện Route 53 chọn Started Chọn Create hosted zones Chọn Get started Trong giao diện Create Hosted Zone Nhập Domain name là tên miền của bạn Cuộn đến cuối trang, chọn Create hosted zone Sau khi tạo Hosted zone, truy cập hosted zone vừa tạo Trong phần Record, copy giá trị trong mục Value/Route traffic 5/ Trong giao diện quản lý tên miền, dán 4 Name server vừa copy\nBỏ dấu chấm ở đuôi của các NS\nQuay lại phần Edit settings của CloudFront Trong mục Alternate domain name (CNAME) nhập fcj.nguyenthanhhuy.id.vn Thay phần \u0026ldquo;nguyenthanhhuy.id.vn\u0026rdquo; bằng tên miền của bạn\nTrong mục SSL Certificate Chọn Request certificate Chọn Next Tạo SSL Certificate trong phần Request public certificate Trong mục Fully qualified domain name, nhập *.nguyenthanhhuy.id.vn Cuộn đến cuối trang, chọn Request Quay lại tab Edit Settings của CloudFront Distributions Trong mục Custom SSL Certificate, chọn certificate vừa tạo Cuộn đến cuối trang, chọn Save changes Truy cập vào certificate đã tạo Trong phần Records chọn Create record in Route 53 Chọn Create records Quay lại Route 53 nguyenthanhhuy.id.vn Trong phần Record, ta thấy một CNAME vừa được tạo ra Chọn Create Record Trong giao diện Create record Recort name nhập fcj Bật phần Alias Trong mục Route traffic to Choose Endpont chọn: Alias to CloudFront distribution Choose distributon chọn: fcj.nguyenthanhhuy.id.vn Chọn Create record Kiểm tra truy cập website Trên thanh tìm kiếm của trình duyệt web, nhập fcj.nguyenthanhhuy.id.vn Nhập Nhựt Khang vào ô textbox Nhấn Submit Màng hình hiển thị dòng text Hello, Nhựt Khang!\n"
+},
+{
+	"uri": "/vi/5-setup-dynamodb/",
+	"title": "Thiết lập AWS DynamoDB",
+	"tags": [],
+	"description": "",
+	"content": "Trong phần này, DynamoDB được sử dụng làm cơ sở dữ liệu NoSQL để lưu trữ và quản lý dữ liệu của ứng dụng web. Nó cho phép người dùng thực hiện các thao tác tạo, đọc, cập nhật, xóa (CRUD) các mục dữ liệu nhanh chóng và linh hoạt, phù hợp với ứng dụng serverless có lượng truy cập biến động.\nGo to AWS Management Console Find DynamoDB Select DynamoDB Trong giao diện DynamoDB chọn Create Table Trong giao diện Create Table Nhập Table name là serverless-web-application-on-aws Nhập Partition key là id Cuộn xuống cuối trang, chọn Create table Sau khi trạng thái của table chuyển sang Active Chọn table vừa tạo Chọn Actions, chọn mục Explore items Chọn Create item Trong giao diện create item Chọn Add new attibute, chọn Number Nhập Attribute name là views Nhập lần lượt value là 0, 1 Chọn Create item Go to AWS Management Console Find IAM Select IAM Trong giao diện IAM Chọn mục Role tại thanh bên Chọn Create role Trong giao diện Create role Trong mục Trusted entity type chọn AWS Service Trong mục Use case Phần Service or use case chọn Lambda Chọn Next Trong phần Add Permissions Tìm kiếm dynamo Chọn AmazonDynamoDBFullAccess Chọn Next Trong phần Name, review and create Trong mục Role name, nhập serverless-web-application Cuộn đến cuối trang, chọn Create role "
+},
+{
+	"uri": "/vi/6-set-up-aws-lambda/",
+	"title": "Thiết lập AWS Lambda",
+	"tags": [],
+	"description": "",
+	"content": "Trong phần này, AWS Lambda được sử dụng để xử lý logic nghiệp vụ của ứng dụng web mà không cần quản lý server. Lambda sẽ thực thi mã nguồn để xử lý yêu cầu từ người dùng, như thao tác tạo, đọc, cập nhật, xóa (CRUD) dữ liệu trên DynamoDB, giúp xây dựng ứng dụng serverless linh hoạt và tiết kiệm chi phí.\nGo to AWS Management Console Find Lambda Select Lambda Trong giao diện Lambda chọn Create Function Trong giao diện Create Function Nhập Function name là serverless-web-application-on-aws Chọn Runtime là Python 3.13 Mở rộng phần Change default execution role Trong phần Change default execution role Mục Excution role chọn Use an existing role Mục Existing role, chọn serverless-web-application-on-aws Trong phần **Additional Configurations Bật Enable function URL Trong mục Auth type, chọn NONE Trong mục Invoke mode, bật Configure cross-origin resource sharing Chọn Create function Kiểm tra hoạt động của Lambda Trong giao diện của lambda vừa tạo, copy Function URL Dán url vừa copy vào trình duyệt web Thay đổi code trong lambda Copy code trong file lambda-function.py đã tải trước đó Dán đoạn code vào lambda và ấn Deploy Hàm lambda trên có tác dụng tăng views lên 1 sau mỗi lần request (Reload web - Tính lượt xem của website)\nKiểm tra trường views sau vài lần reload web trong link function url sẽ tăng lên theo số lần reload website Thay đổi Lambda URL trong file script.js trong S3 Dán url đã copy trước đó vào file script.js Upload file script.js vào S3 thay cho file cũ trong phần Object của S3 Chọn Upload Chọn Add file Chọn script.js Chọn Upload Chúng ta đã set up xong tất cả cho Serverless Web Application\n"
+},
+{
+	"uri": "/vi/7-testing/",
+	"title": "Kiểm tra kết quả",
+	"tags": [],
+	"description": "",
+	"content": "Truy cập trang web fcj.nguyenthanhhuy.id.vn\nẤn biểu tượng Reload để xem sự thay đổi của số lượt xem\nKết quả, lượt view sẽ tăng 1 sau mỗi lần reload\n"
+},
+{
+	"uri": "/vi/8-clean-up-resource/",
+	"title": "Dọn dẹp tài nguyên",
+	"tags": [],
+	"description": "",
+	"content": " Dọn dẹp Lambda Chọn Lambda serverless-web-application Chọn Actions Chọn Delete Nhập confirm Chọn Delete Dọn dẹp DynamoDB Chọn mục Table Tích chọn vào table serverless-web-application Chọn Delete Nhập confirm CHọn Delete Dọn dẹp IAM role Chọn mục Roles Tích chọn vào role serverless-web-application-on-aws Chọn Delete Nhập serverless-web-application-on-aws Chọn Delete Dọn dẹp Route 53 Chọn mục Hosted zones Chọn vào zone nguyenthanhhuy.id.vn Chọn 2 record cuối Chọn Delete Chọn Delete zone Nhập delete Chọn Delete Dọn dẹp S3 Bucket Truy cập vào S3 serverless-web-application-on-aws-fcj Chọn Empty Bucket Nhập permanenty delete Chọn Empty Sau đó, thực hiện xóa bucker serverless-web-application-on-aws-fcj Chọn serverless-web-application-on-aws-fcj Chọn Delete Nhập serverless-web-application-on-aws-fcj Chọn Delete bucket Dọn dẹp CloudFront Truy cập vào CloudFront Chọn Distributon là Cloudfront chúng ta đang dùng Chọn Disable và xác nhận Đợi đến khi Cloudfront disable, ta chọn Delete Xác nhận Delete Xóa SSL Certificate Truy cập Certificate manager Chọn Certificate nguyenthanhhuy.id.vn Chọn Delete Nhập delete Chọn Delete Như vậy, chúng ta đã dọn dẹp tài nguyên xong và kết thúc tại đây.\nTrần Lâm Nhựt Khang\n"
+},
+{
+	"uri": "/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
