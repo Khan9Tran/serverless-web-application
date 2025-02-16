@@ -52,4 +52,6 @@ url = "https://www.facebook.com/groups/awsstudygroupfcj"
 weight = 20
 
 baseURL = "https://khan9tran.github.io/servless-web-application-public/"
+relativeURLs = true
+uglyURLs = true
 
