@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Set up AWS CloudFront :: BUILD A SERVERLESS WEB APPLICATION ON AWS USING AWS LAMBDA, DYNAMODB, AND S3</title>
+    <title>Set up AWS DynamoDB :: BUILD A SERVERLESS WEB APPLICATION ON AWS USING AWS LAMBDA, DYNAMODB, AND S3</title>
 
     
     <link href="/css/nucleus.css?1739771637" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/3-set-up-aws-cloudfront/">
+  <body class="" data-url="/5-set-up-aws-dynamodb/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -136,7 +136,7 @@
     
     <li data-nav-id="/3-set-up-aws-cloudfront/" title="Set up AWS CloudFront" class="dd-item 
         
-        active
+        
         
         ">
       <a href="/3-set-up-aws-cloudfront/">
@@ -188,7 +188,7 @@
     
     <li data-nav-id="/5-set-up-aws-dynamodb/" title="Set up AWS DynamoDB" class="dd-item 
         
-        
+        active
         
         ">
       <a href="/5-set-up-aws-dynamodb/">
@@ -321,7 +321,7 @@
                   
                     
                     
-                      <option id="en" value="/3-set-up-aws-cloudfront/" selected>English</option>
+                      <option id="en" value="/5-set-up-aws-dynamodb/" selected>English</option>
                     
                   
               
@@ -335,7 +335,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/3-set-up-aws-cloudfront/">Tiếng Việt</option>
+                      <option id="vi" value="/vi/5-set-up-aws-dynamodb/">Tiếng Việt</option>
                     
                   
               
@@ -421,7 +421,7 @@
             
           
           
-            <a href='/'>Serverless web application</a> > Set up AWS CloudFront
+            <a href='/'>Serverless web application</a> > Set up AWS DynamoDB
           
         
           
@@ -448,7 +448,7 @@
           
             <h1>
               
-              Set up AWS CloudFront
+              Set up AWS DynamoDB
             </h1>
           
 
@@ -456,71 +456,96 @@
 
 
 
-	<p>Amazon CloudFront is a content delivery network (CDN) service that helps us distribute static and dynamic content easily, reliably, with high performance, security, and ease of use for developers. In this section, we will use CloudFront to distribute content from the S3 storage.</p>
+	<p>In this section, DynamoDB is used as a NoSQL database to store and manage the data of the web application. It allows users to perform create, read, update, delete (CRUD) operations on data items quickly and flexibly, suitable for serverless applications with fluctuating traffic.</p>
 <ol>
 <li>Go to <a href="https://aws.amazon.com/console/">AWS Management Console</a></li>
 </ol>
 <ul>
-<li>Find and select <strong>CloudFront</strong> or you can select it on the main screen</li>
+<li>Find <strong>DynamoDB</strong></li>
+<li>Select <strong>DynamoDB</strong></li>
 </ul>
-<p><img src="/images/3/3.1.png" alt="Description"></p>
+<p><img src="/images/5/5.1.png" alt="Description"></p>
 <ol start="2">
-<li>In the CloudFront interface, select <strong>Create distribution</strong></li>
+<li>In the DynamoDB interface, select <strong>Create Table</strong></li>
 </ol>
-<p><img src="/images/3/3.2.png" alt="Description"></p>
+<p><img src="/images/5/5.2.png" alt="Description"></p>
 <ol start="3">
-<li>In the Create CloudFront interface</li>
+<li>In the Create Table interface</li>
 </ol>
 <ul>
-<li>Select the Origin Domain as the S3 you just created</li>
-<li>The <strong>Name</strong> will be generated automatically</li>
+<li>Enter <strong>Table name</strong> as <code>serverless-web-application-on-aws</code></li>
+<li>Enter <strong>Partition key</strong> as <code>id</code></li>
+<li>Scroll to the bottom of the page, select <strong>Create table</strong></li>
 </ul>
-<p><img src="/images/3/3.3.png" alt="Description"></p>
+<p><img src="/images/5/5.3.png" alt="Description"></p>
+<ol start="4">
+<li>After the table status changes to <strong>Active</strong></li>
+</ol>
 <ul>
-<li>In the Origin access section, select <strong>Origin access control setting</strong></li>
-<li>Next, select <strong>Create new OAC</strong></li>
+<li>Select the newly created table</li>
+<li>Select <strong>Actions</strong>, then select <strong>Explore items</strong></li>
 </ul>
-<p><img src="/images/3/3.4.png" alt="Description"></p>
+<p><img src="/images/5/5.4.png" alt="Description"></p>
 <ul>
-<li>In the OAC creation interface
+<li>Select <strong>Create item</strong></li>
+</ul>
+<p><img src="/images/5/5.5.png" alt="Description"></p>
+<ol start="5">
+<li>In the create item interface</li>
+</ol>
 <ul>
-<li>In the <strong>name</strong> section, enter <code>serverless-web-application-on-aws-fcj.s3.us-east.amazonaws.com-1</code></li>
-<li>Select <strong>Create</strong></li>
+<li>Select <strong>Add new attribute</strong>, choose <strong>Number</strong></li>
+<li>Enter <strong>Attribute name</strong> as <code>views</code></li>
+<li>Enter <strong>value</strong> sequentially as <em>0</em>, <em>1</em></li>
+<li>Select <strong>Create item</strong></li>
+</ul>
+<p><img src="/images/5/5.6.png" alt="Description"></p>
+<ol start="6">
+<li>Go to <a href="https://aws.amazon.com/console/">AWS Management Console</a></li>
+</ol>
+<ul>
+<li>Find <strong>IAM</strong></li>
+<li>Select <strong>IAM</strong></li>
+</ul>
+<p><img src="/images/5/5.7.png" alt="Description"></p>
+<ol start="2">
+<li>In the IAM interface</li>
+</ol>
+<ul>
+<li>Select <strong>Role</strong> from the sidebar</li>
+<li>Select <strong>Create role</strong></li>
+</ul>
+<p><img src="/images/5/5.8.png" alt="Description"></p>
+<ol start="3">
+<li>In the Create role interface</li>
+</ol>
+<ul>
+<li>In the <strong>Trusted entity type</strong> section, select <strong>AWS Service</strong></li>
+<li>In the <strong>Use case</strong> section
+<ul>
+<li>In the <strong>Service or use case</strong> field, select <strong>Lambda</strong></li>
 </ul>
 </li>
+<li>Select <strong>Next</strong></li>
 </ul>
-<p><img src="/images/3/3.5.png" alt="Description"></p>
+<p><img src="/images/5/5.9.png" alt="Description"></p>
+<ol start="4">
+<li>In the Add Permissions section</li>
+</ol>
 <ul>
-<li>In the <strong>Web Application Firewall</strong> section, select <strong>Do not enable security protections</strong></li>
+<li>Search for <strong>dynamo</strong></li>
+<li>Select <strong>AmazonDynamoDBFullAccess</strong></li>
+<li>Select <strong>Next</strong></li>
 </ul>
-<p><img src="/images/3/3.6.png" alt="Description"></p>
+<p><img src="/images/5/5.10.png" alt="Description"></p>
+<ol start="5">
+<li>In the Name, review and create section</li>
+</ol>
 <ul>
-<li>Keep the remaining sections as default and scroll to the bottom of the page, select <strong>Create distribution</strong></li>
+<li>In the <strong>Role name</strong> field, enter <code>serverless-web-application</code></li>
+<li>Scroll to the bottom of the page, select <strong>Create role</strong></li>
 </ul>
-<p><img src="/images/3/3.7.png" alt="Description"></p>
-<ul>
-<li>After creation, select <strong>Copy policy</strong></li>
-</ul>
-<p><img src="/images/3/3.8.png" alt="Description"></p>
-<ul>
-<li>Go back to the created S3 Bucket
-<ul>
-<li>Go to the <strong>Permissions</strong> tab</li>
-<li>In the <strong>Bucket Policy</strong> section, select <strong>Edit</strong></li>
-<li>In the <strong>Edit bucket policy</strong> interface, paste the copied policy</li>
-<li>Click <strong>Save changes</strong></li>
-</ul>
-</li>
-</ul>
-<p><img src="/images/3/3.9.png" alt="Description"></p>
-<ul>
-<li>Switch to CloudFront, go to the <strong>Setting</strong> section, select <strong>Edit</strong></li>
-</ul>
-<p><img src="/images/3/3.10.png" alt="Description"></p>
-<ul>
-<li>Scroll down to the <strong>Default root object</strong> section, enter <code>index.html</code>. Then click <strong>Save changes</strong></li>
-</ul>
-<p><img src="/images/3/3.11.png" alt="Description"></p>
+<p><img src="/images/5/5.11.png" alt="Description"></p>
 
 
 
@@ -596,26 +621,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -647,6 +652,26 @@
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -700,10 +725,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/2-set-up-aws-s3-bucket/" title="Set up AWS S3 Bucket"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/4-set-up-aws-route53/" title="Set up AWS Route53"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/4-set-up-aws-route53/" title="Set up AWS Route53" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/6-set-up-aws-lambda/" title="Set up AWS Lambda" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

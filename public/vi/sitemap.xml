@@ -62,16 +62,16 @@
                 href="/vi/4-set-up-aws-route53/"
                 />
   </url><url>
-    <loc>/vi/5-setup-aws-dynamodb/</loc>
+    <loc>/vi/5-set-up-aws-dynamodb/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/5-setup-aws-dynamodb/"
+                href="/5-set-up-aws-dynamodb/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/5-setup-aws-dynamodb/"
+                href="/vi/5-set-up-aws-dynamodb/"
                 />
   </url><url>
     <loc>/vi/6-set-up-aws-lambda/</loc>
