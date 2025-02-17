@@ -2,136 +2,136 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/vi/1-introduce/</loc>
+    <loc>https://khan9tran.github.io/serverless-web-application/vi/1-introduce/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/1-introduce/"
+                href="https://khan9tran.github.io/serverless-web-application/1-introduce/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/1-introduce/"
+                href="https://khan9tran.github.io/serverless-web-application/vi/1-introduce/"
                 />
   </url><url>
-    <loc>/vi/2-set-up-aws-s3-bucket/</loc>
+    <loc>https://khan9tran.github.io/serverless-web-application/vi/2-set-up-aws-s3-bucket/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/2-set-up-aws-s3-bucket/"
+                href="https://khan9tran.github.io/serverless-web-application/2-set-up-aws-s3-bucket/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/2-set-up-aws-s3-bucket/"
+                href="https://khan9tran.github.io/serverless-web-application/vi/2-set-up-aws-s3-bucket/"
                 />
   </url><url>
-    <loc>/vi/</loc>
+    <loc>https://khan9tran.github.io/serverless-web-application/vi/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/"
+                href="https://khan9tran.github.io/serverless-web-application/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/"
+                href="https://khan9tran.github.io/serverless-web-application/vi/"
                 />
   </url><url>
-    <loc>/vi/3-set-up-aws-cloudfront/</loc>
+    <loc>https://khan9tran.github.io/serverless-web-application/vi/3-set-up-aws-cloudfront/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/3-set-up-aws-cloudfront/"
+                href="https://khan9tran.github.io/serverless-web-application/3-set-up-aws-cloudfront/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/3-set-up-aws-cloudfront/"
+                href="https://khan9tran.github.io/serverless-web-application/vi/3-set-up-aws-cloudfront/"
                 />
   </url><url>
-    <loc>/vi/4-set-up-aws-route53/</loc>
+    <loc>https://khan9tran.github.io/serverless-web-application/vi/4-set-up-aws-route53/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/4-set-up-aws-route53/"
+                href="https://khan9tran.github.io/serverless-web-application/4-set-up-aws-route53/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/4-set-up-aws-route53/"
+                href="https://khan9tran.github.io/serverless-web-application/vi/4-set-up-aws-route53/"
                 />
   </url><url>
-    <loc>/vi/5-set-up-aws-dynamodb/</loc>
+    <loc>https://khan9tran.github.io/serverless-web-application/vi/5-set-up-aws-dynamodb/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/5-set-up-aws-dynamodb/"
+                href="https://khan9tran.github.io/serverless-web-application/5-set-up-aws-dynamodb/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/5-set-up-aws-dynamodb/"
+                href="https://khan9tran.github.io/serverless-web-application/vi/5-set-up-aws-dynamodb/"
                 />
   </url><url>
-    <loc>/vi/6-set-up-aws-lambda/</loc>
+    <loc>https://khan9tran.github.io/serverless-web-application/vi/6-set-up-aws-lambda/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/6-set-up-aws-lambda/"
+                href="https://khan9tran.github.io/serverless-web-application/6-set-up-aws-lambda/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/6-set-up-aws-lambda/"
+                href="https://khan9tran.github.io/serverless-web-application/vi/6-set-up-aws-lambda/"
                 />
   </url><url>
-    <loc>/vi/7-testing/</loc>
+    <loc>https://khan9tran.github.io/serverless-web-application/vi/7-testing/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/7-testing/"
+                href="https://khan9tran.github.io/serverless-web-application/7-testing/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/7-testing/"
+                href="https://khan9tran.github.io/serverless-web-application/vi/7-testing/"
                 />
   </url><url>
-    <loc>/vi/8-clean-up-resource/</loc>
+    <loc>https://khan9tran.github.io/serverless-web-application/vi/8-clean-up-resource/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/8-clean-up-resource/"
+                href="https://khan9tran.github.io/serverless-web-application/8-clean-up-resource/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/8-clean-up-resource/"
+                href="https://khan9tran.github.io/serverless-web-application/vi/8-clean-up-resource/"
                 />
   </url><url>
-    <loc>/vi/categories/</loc>
+    <loc>https://khan9tran.github.io/serverless-web-application/vi/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/categories/"
+                href="https://khan9tran.github.io/serverless-web-application/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/categories/"
+                href="https://khan9tran.github.io/serverless-web-application/vi/categories/"
                 />
   </url><url>
-    <loc>/vi/tags/</loc>
+    <loc>https://khan9tran.github.io/serverless-web-application/vi/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/"
+                href="https://khan9tran.github.io/serverless-web-application/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/tags/"
+                href="https://khan9tran.github.io/serverless-web-application/vi/tags/"
                 />
   </url>
 </urlset>

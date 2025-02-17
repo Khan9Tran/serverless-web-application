@@ -1,3 +1,4 @@
+baseURL = "https://khan9tran.github.io/serverless-web-application/"
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"
 

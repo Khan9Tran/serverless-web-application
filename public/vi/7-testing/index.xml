@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kiểm tra kết quả on Xây dựng SERVERLESS WEB APPLICATION trong AWS sử dụng AWS LAMBDA, DYNAMODB, AND S3</title>
-    <link>/vi/7-testing/</link>
+    <link>https://khan9tran.github.io/serverless-web-application/vi/7-testing/</link>
     <description>Recent content in Kiểm tra kết quả on Xây dựng SERVERLESS WEB APPLICATION trong AWS sử dụng AWS LAMBDA, DYNAMODB, AND S3</description>
     <generator>Hugo</generator>
     <language>vi</language>
-    <atom:link href="/vi/7-testing/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://khan9tran.github.io/serverless-web-application/vi/7-testing/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

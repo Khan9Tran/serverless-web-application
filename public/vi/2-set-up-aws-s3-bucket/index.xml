@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Thiết lập AWS S3 Bucket on Xây dựng SERVERLESS WEB APPLICATION trong AWS sử dụng AWS LAMBDA, DYNAMODB, AND S3</title>
-    <link>/vi/2-set-up-aws-s3-bucket/</link>
+    <link>https://khan9tran.github.io/serverless-web-application/vi/2-set-up-aws-s3-bucket/</link>
     <description>Recent content in Thiết lập AWS S3 Bucket on Xây dựng SERVERLESS WEB APPLICATION trong AWS sử dụng AWS LAMBDA, DYNAMODB, AND S3</description>
     <generator>Hugo</generator>
     <language>vi</language>
-    <atom:link href="/vi/2-set-up-aws-s3-bucket/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://khan9tran.github.io/serverless-web-application/vi/2-set-up-aws-s3-bucket/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

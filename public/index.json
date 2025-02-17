@@ -1,76 +1,76 @@
 [
 {
-	"uri": "/1-introduce/",
+	"uri": "https://khan9tran.github.io/serverless-web-application/1-introduce/",
 	"title": "Introduction",
 	"tags": [],
 	"description": "",
 	"content": "Building a Serverless Application on AWS This project guides you through building a serverless web application using AWS services, helping you deploy an efficient, flexible, and cost-effective system.\nSteps to Implement Create a DynamoDB table to store application data. Build a Lambda function to handle CRUD operations on the DynamoDB table. Use S3 to store and host the web application\u0026rsquo;s static files such as HTML, CSS, and JavaScript. Create a CloudFront distribution to serve static files from S3 with low latency, ensuring fast page loading speeds. Expected Outcomes Upon completing the project, you will have a working serverless web application hosted on AWS. You will gain hands-on experience in building serverless applications using AWS Lambda, DynamoDB, S3, and CloudFront. You will also understand how to integrate AWS services to create a complete solution, from backend to frontend. This project will enhance your skills in cloud computing, serverless architecture, and AWS service management, providing a strong foundation for modern applications.\n"
 },
 {
-	"uri": "/",
+	"uri": "https://khan9tran.github.io/serverless-web-application/",
 	"title": "Serverless web application",
 	"tags": [],
 	"description": "",
 	"content": "BUILD A SERVERLESS WEB APPLICATION ON AWS USING AWS LAMBDA, DYNAMODB, AND S3 Overall In this lab, you will build a serverless web application using AWS Lambda, DynamoDB, and S3. The application will allow users to create, read, update, and delete (CRUD) items from a DynamoDB table.\nContent Introduction Set up AWS S3 Bucket Set up AWS CloudFront Set up AWS Route53 Set up AWS DynamoDB Set up AWS Lambda Testing Clean up resources "
 },
 {
-	"uri": "/2-set-up-aws-s3-bucket/",
+	"uri": "https://khan9tran.github.io/serverless-web-application/2-set-up-aws-s3-bucket/",
 	"title": "Set up AWS S3 Bucket",
 	"tags": [],
 	"description": "",
 	"content": "In this lab, we will create an S3 bucket to store all the website data.\nGo to AWS Management Console Search for S3 Select S3 In the S3 interface: Click on Buckets Click on Create Bucket In the Create Bucket interface: Under Bucket name, enter serverless-web-application-on-aws-fcj Scroll to the bottom of the page: Click Create Bucket Upload the required files You can download the server files here: Download File\nIn the Bucket interface, click on the bucket serverless-web-application-on-aws-fcj Next, click Upload Click Add files Select the following files: index.html, script.js, style.css Then, click Upload Wait until all files are uploaded successfully. "
 },
 {
-	"uri": "/3-set-up-aws-cloudfront/",
+	"uri": "https://khan9tran.github.io/serverless-web-application/3-set-up-aws-cloudfront/",
 	"title": "Set up AWS CloudFront",
 	"tags": [],
 	"description": "",
 	"content": "Amazon CloudFront is a content delivery network (CDN) service that helps us distribute static and dynamic content easily, reliably, with high performance, security, and ease of use for developers. In this section, we will use CloudFront to distribute content from the S3 storage.\nGo to AWS Management Console Find and select CloudFront or you can select it on the main screen In the CloudFront interface, select Create distribution In the Create CloudFront interface Select the Origin Domain as the S3 you just created The Name will be generated automatically In the Origin access section, select Origin access control setting Next, select Create new OAC In the OAC creation interface In the name section, enter serverless-web-application-on-aws-fcj.s3.us-east.amazonaws.com-1 Select Create In the Web Application Firewall section, select Do not enable security protections Keep the remaining sections as default and scroll to the bottom of the page, select Create distribution After creation, select Copy policy Go back to the created S3 Bucket Go to the Permissions tab In the Bucket Policy section, select Edit In the Edit bucket policy interface, paste the copied policy Click Save changes Switch to CloudFront, go to the Setting section, select Edit Scroll down to the Default root object section, enter index.html. Then click Save changes "
 },
 {
-	"uri": "/4-set-up-aws-route53/",
+	"uri": "https://khan9tran.github.io/serverless-web-application/4-set-up-aws-route53/",
 	"title": "Set up AWS Route53",
 	"tags": [],
 	"description": "",
 	"content": "Route 53 helps us configure domain names to point to the website deployed on AWS, making access more convenient.\nIn this section, we need to prepare a domain name. The domain name to be used with the Hosted Zone on Route 53 only needs to be validly registered and have DNS management rights. I am using a domain borrowed from a friend, nguyenthanhhuy.id.vn. You can also register a free .id.vn domain from domain service providers like matbao, tenten, etc.\nGo to AWS Management Console Find Route 53 Select Route 53 In the Route 53 interface, select Started Select Create hosted zones Select Get started In the Create Hosted Zone interface Enter Domain name as your domain name Scroll to the bottom of the page, select Create hosted zone After creating the Hosted zone, access the newly created hosted zone In the Record section, copy the values in the Value/Route traffic field In the domain management interface, paste the 4 Name servers you just copied Remove the dot at the end of the NS\nGo back to the Edit settings section of CloudFront In the Alternate domain name (CNAME) field, enter fcj.nguyenthanhhuy.id.vn Replace \u0026ldquo;nguyenthanhhuy.id.vn\u0026rdquo; with your domain name\nIn the SSL Certificate section Select Request certificate Select Next Create an SSL Certificate in the Request public certificate section In the Fully qualified domain name field, enter *.nguyenthanhhuy.id.vn Scroll to the bottom of the page, select Request Go back to the Edit Settings tab of CloudFront Distributions In the Custom SSL Certificate section, select the certificate you just created Scroll to the bottom of the page, select Save changes Access the created certificate In the Records section, select Create record in Route 53 Select Create records Go back to Route 53 nguyenthanhhuy.id.vn In the Record section, you will see a newly created CNAME Select Create Record In the Create record interface Enter fcj in the Record name field Enable the Alias option In the Route traffic to section Choose Endpoint select: Alias to CloudFront distribution Choose distribution select: fcj.nguyenthanhhuy.id.vn Select Create record Check website access In the web browser\u0026rsquo;s search bar, enter fcj.nguyenthanhhuy.id.vn Enter Nhựt Khang in the textbox Click Submit The screen displays the text Hello, Nhựt Khang!\n"
 },
 {
-	"uri": "/5-set-up-aws-dynamodb/",
+	"uri": "https://khan9tran.github.io/serverless-web-application/5-set-up-aws-dynamodb/",
 	"title": "Set up AWS DynamoDB",
 	"tags": [],
 	"description": "",
 	"content": "In this section, DynamoDB is used as a NoSQL database to store and manage the data of the web application. It allows users to perform create, read, update, delete (CRUD) operations on data items quickly and flexibly, suitable for serverless applications with fluctuating traffic.\nGo to AWS Management Console Find DynamoDB Select DynamoDB In the DynamoDB interface, select Create Table In the Create Table interface Enter Table name as serverless-web-application-on-aws Enter Partition key as id Scroll to the bottom of the page, select Create table After the table status changes to Active Select the newly created table Select Actions, then select Explore items Select Create item In the create item interface Select Add new attribute, choose Number Enter Attribute name as views Enter value sequentially as 0, 1 Select Create item Go to AWS Management Console Find IAM Select IAM In the IAM interface Select Role from the sidebar Select Create role In the Create role interface In the Trusted entity type section, select AWS Service In the Use case section In the Service or use case field, select Lambda Select Next In the Add Permissions section Search for dynamo Select AmazonDynamoDBFullAccess Select Next In the Name, review and create section In the Role name field, enter serverless-web-application Scroll to the bottom of the page, select Create role "
 },
 {
-	"uri": "/6-set-up-aws-lambda/",
+	"uri": "https://khan9tran.github.io/serverless-web-application/6-set-up-aws-lambda/",
 	"title": "Set up AWS Lambda",
 	"tags": [],
 	"description": "",
 	"content": "In this section, AWS Lambda is used to handle the business logic of the web application without the need to manage servers. Lambda will execute the source code to handle user requests, such as creating, reading, updating, and deleting (CRUD) data on DynamoDB, helping to build a flexible and cost-effective serverless application.\nGo to AWS Management Console Find Lambda Select Lambda In the Lambda interface, select Create Function In the Create Function interface Enter Function name as serverless-web-application-on-aws Select Runtime as Python 3.13 Expand the Change default execution role section In the Change default execution role section In the Execution role field, select Use an existing role In the Existing role field, select serverless-web-application-on-aws In the Additional Configurations section Enable Enable function URL In the Auth type field, select NONE In the Invoke mode field, enable Configure cross-origin resource sharing Select Create function Test the Lambda function In the interface of the newly created lambda, copy the Function URL Paste the copied URL into a web browser Change the code in the lambda Copy the code from the lambda-function.py file that was downloaded earlier Paste the code into the lambda and click Deploy The lambda function above increases the views by 1 after each request (Reload web - Count the number of website views)\nCheck the views field after a few web reloads in the function URL link, it will increase according to the number of website reloads Change the Lambda URL in the script.js file in S3 Paste the previously copied URL into the script.js file Upload the script.js file to S3 to replace the old file in the Object section of S3 Select Upload Select Add file Select script.js Select Upload We have completed the setup for the Serverless Web Application.\n"
 },
 {
-	"uri": "/7-testing/",
+	"uri": "https://khan9tran.github.io/serverless-web-application/7-testing/",
 	"title": "Check the results",
 	"tags": [],
 	"description": "",
 	"content": "Access the website fcj.nguyenthanhhuy.id.vn\nClick the Reload icon to see the change in the number of views\nAs a result, the view count will increase by 1 after each reload\n"
 },
 {
-	"uri": "/8-clean-up-resource/",
+	"uri": "https://khan9tran.github.io/serverless-web-application/8-clean-up-resource/",
 	"title": "Clean up resources",
 	"tags": [],
 	"description": "",
 	"content": " Clean up Lambda Select Lambda serverless-web-application Select Actions Select Delete Enter confirm Select Delete Clean up DynamoDB Select the Table section Check the table serverless-web-application Select Delete Enter confirm Select Delete Clean up IAM role Select the Roles section Check the role serverless-web-application-on-aws Select Delete Enter serverless-web-application-on-aws Select Delete Clean up Route 53 Select the Hosted zones section Select the zone nguyenthanhhuy.id.vn Select the last 2 records Select Delete Select Delete zone Enter delete Select Delete Clean up S3 Bucket Access S3 serverless-web-application-on-aws-fcj Select Empty Bucket Enter permanently delete Select Empty Then, delete the bucket serverless-web-application-on-aws-fcj Select serverless-web-application-on-aws-fcj Select Delete Enter serverless-web-application-on-aws-fcj Select Delete bucket Clean up CloudFront Access CloudFront Select the Distribution we are using Select Disable and confirm Wait until CloudFront is disabled, then select Delete Confirm Delete Delete SSL Certificate Access Certificate Manager Select the certificate nguyenthanhhuy.id.vn Select Delete Enter delete Select Delete Thus, we have cleaned up the resources and concluded here.\nTrần Lâm Nhựt Khang\n"
 },
 {
-	"uri": "/categories/",
+	"uri": "https://khan9tran.github.io/serverless-web-application/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "/tags/",
+	"uri": "https://khan9tran.github.io/serverless-web-application/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",
